@@ -1,30 +1,37 @@
-import React from 'react'
+import React from 'react';
 
-import henImage from '../img/hen/hen_1.jpg'
+/**Import Global State */
+import { useProduct } from '../context/product-context/productProvider';
 
-const Product = () => {
 
-    // if (rooms.length === 0) {
-    //     return (
-    //       <div className='empty-search'>
-    //         <h3>unfortunately no rooms matched your search parameters</h3>
-    //       </div>
-    //     );
-    //   }
+const Product = ({product}) => {
+
+  const { img, price,description, productName, Incart } = product;
+
+  const { addToCart } = useProduct();
+
+  const handleClick = () => {
+    addToCart(product);
+  }
+    
     return (
         <article className='product'>
         <div className='img-container'>
-          <img src={henImage} alt='product_img' />
+          <img src={img} alt='product_img' />
           <div className='price-top'>
-            <h6>{'500 Ksh'}</h6>
-            <p>per Hen</p>
+            <h6>{price}{'Ksh'} </h6>
+            <p> {description} </p>
           </div>
-          <button className='btn-primary product-link'>
-            Add to cart
+          <button 
+            className='btn-primary product-link'
+            onClick={handleClick }
+            disabled={Incart}
+            >
+              {Incart ? 'Product Added' : 'Add to cart'}
           </button>
         </div>
         <p className='product-info'>
-            Lorem ipsum dolor sit, amet consectetur
+            {productName}
         </p>
       </article>
     )

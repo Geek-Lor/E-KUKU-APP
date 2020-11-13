@@ -2,16 +2,23 @@ import React from "react";
 
 //Components Import
 import Title from "./Title";
-import ProductList from './ProductList';
+import Product from './Product';
+
+//Import Global State
+import { useProduct } from '../context/product-context/productProvider'
 
 
 const FeaturedProducts = () => {
+
+  const { featuredProducts } = useProduct();
  
   return (
     <section className='featured-products'>
       <Title title='featured products' />
       <div className='featured-products-center'>
-        <ProductList />
+        {
+          featuredProducts.map(product => <Product key={product.id} product={product} />)
+        }
       </div>
     </section>
   );
