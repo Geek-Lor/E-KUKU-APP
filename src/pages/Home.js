@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
 
+/**Routing */
+import { Link } from 'react-router-dom';
+
 /**Import Components */
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import FeaturedProducts from '../components/FeaturedProducts'
+import FeaturedProducts from '../components/FeaturedProducts';
 
 
 const Home = () => {
@@ -14,10 +17,10 @@ const Home = () => {
           title='welcome to e-kuku'
           subTitle='chicken market in your pocket'
         >
-          <button to='/rooms' className='btn-primary'>
+          <Link to='/market' className='btn-primary'>
             {" "}
             market
-          </button>
+          </Link>
         </Banner>
       </Hero>
       <FeaturedProducts />

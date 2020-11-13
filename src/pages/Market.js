@@ -1,5 +1,7 @@
 import React from "react";
 
+/**Routing */
+import { Link } from 'react-router-dom';
 
 //Import Components
 import Hero from "../components/Hero";
@@ -11,9 +13,9 @@ const Market = () => {
     <>
       <Hero hero='marketHero'>
         <Banner title='E-kuku market'>
-          <button to='/' className='btn-primary'>
+          <Link to='/' className='btn-primary'>
             return home
-          </button>
+          </Link>
         </Banner>
       </Hero>
       <ProductsContainer />
