@@ -1,6 +1,6 @@
 /** Root Variables*/
 :root {
-	--primary-color: rgba(206, 56, 2, 0.8);
+	--primary-color: rgba(206, 56, 2, 0.8) !important;
 	--utility-color: rgb(247, 247, 247);
 	--darkGrey: #cfcfcf;
 	--mainSpacing: 3px;
@@ -11,7 +11,7 @@
 
 /**Reset Page defaults*/
 * {
-	box-sizing: border-box;
+	box-sizing: border-box !important;
 	padding: 0;
 	margin: 0;
 }
@@ -57,17 +57,31 @@ h6 {
 	text-decoration: none;
 	letter-spacing: var(--mainSpacing);
 	color: var(--utility-color);
-	background: var(--primary-color);
+	background: var(--primary-color) !important;
 	padding: 0.4rem 0.9rem;
-	border: 0.18rem solid var(--primary-color);
+	border: 0.18rem solid var(--primary-color) !important;
 	border-radius: 0.5rem;
 	transition: var(--mainTransition);
 	text-transform: uppercase;
 	cursor: pointer;
 }
-.btn-primary:hover {
-	background: transparent;
-	color: var(--primary-color);
+.btn-primary:hover,
+.btn-primary:active {
+	background: transparent !important;
+}
+
+.error {
+	text-align: center;
+	text-transform: uppercase;
+	margin: 2rem 0;
+}
+
+.empty-search {
+	text-align: center;
+	text-transform: capitalize;
+	margin: 2rem 0;
+	padding: 1rem;
+	letter-spacing: var(--mainSpacing);
 }
 
 /**Navigation Bar*/
@@ -77,6 +91,8 @@ h6 {
 	background-color: var(--utility-color);
 	box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.25);
 	position: fixed;
+	z-index: 1;
+	padding: 0 !important;
 }
 .navigation-container {
 	width: 100%;
@@ -123,15 +139,18 @@ h6 {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	background-color: red;
+	/* background-color: red; */
 }
 .nav-btn {
-	padding: 0.5em 0.8em;
+	width: 40%;
+	height: 75%;
+	font-size: 1.25rem;
+	color: var(--primary-color);
 	outline: none;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	background-color: rebeccapurple;
+	/* background-color: rebeccapurple; */
 }
 .hide-btn {
 	display: none;
@@ -246,7 +265,7 @@ h6 {
 	width: 5rem;
 	height: 5px;
 	margin: 0 auto;
-	background: var(--primaryColor);
+	background: var(--primary-color);
 }
 /* end of Title */
 
@@ -291,6 +310,7 @@ h6 {
 }
 .img-container img {
 	width: 100%;
+	height: 260px;
 	display: block;
 	transition: var(--mainTransition);
 }
@@ -302,7 +322,7 @@ h6 {
 	color: var(--utility-color);
 	padding: 0.3rem 0.6rem 0.5rem;
 	border-bottom-right-radius: 1rem;
-	font-size: 0.5rem;
+	font-size: 0.7rem;
 	text-align: center;
 	transition: var(--mainTransition);
 }
@@ -333,11 +353,13 @@ h6 {
 }
 .product-info {
 	background: var(--darkGrey);
+	color: var(--primary-color);
 	text-transform: capitalize;
 	padding: 0.5rem 0;
 	text-align: center;
 	font-weight: 700;
 	letter-spacing: var(--mainSpacing);
+	margin-bottom: 0 !important;
 }
 /* end of product  */
 
@@ -391,6 +413,10 @@ h6 {
 	width: 100%;
 	background: transparent;
 	font-size: 1rem;
+	padding: 0 !important;
+	margin-bottom: 0 !important;
+	outline: none !important;
+	border: none !important;
 }
 .size-inputs {
 	display: flex;
